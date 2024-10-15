@@ -37,4 +37,10 @@ public class DepartmentController {
 	public String deleteDepartment(@RequestParam int id) throws ClientProtocolException, IOException{
      return service.deleteDepartment( id);		
 	}
+	
+	@PostMapping("/getAllDepartments")
+	public String getAllDepartment(@RequestParam int pageNo,@RequestParam int pageSize) 
+	throws ClientProtocolException, IOException{
+     return service.getAllDepartmnets(pageNo,pageSize);		
+	}
 }

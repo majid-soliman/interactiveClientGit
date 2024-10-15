@@ -29,4 +29,9 @@ public class DepartmentService {
 		return integrationService.getDeleteRequest(APIUtils.deleteDepartmentUrl,id);
 	}
 	
+	public String getAllDepartmnets(int pageNo,int pageSize) throws ClientProtocolException, IOException{
+		String url=APIUtils.getAllDepartmentsUrl+"pageNo="+pageNo+"&pageSize="+pageSize;
+		return integrationService.getAllPagenationRequest(url);
+	}
+	
 }

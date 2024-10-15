@@ -39,5 +39,11 @@ public class EmployeeController {
      return service.deleteEmployee( id);		
 	}
 	
+	@PostMapping("/getAllEmployees")
+	public String getAllEmployees(@RequestParam int pageNo,@RequestParam int pageSize) 
+	throws ClientProtocolException, IOException{
+     return service.getAllEmployees(pageNo,pageSize);		
+	}
+	
 
 }

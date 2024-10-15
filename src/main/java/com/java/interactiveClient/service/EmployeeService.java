@@ -26,7 +26,13 @@ public class EmployeeService {
 	}
 	
 	public String deleteEmployee(int id) throws ClientProtocolException, IOException{
-		
 		return integrationService.getDeleteRequest(APIUtils.deleteEmployeeUrl,id);
 	}
+	
+	public String getAllEmployees(int pageNo,int pageSize) throws ClientProtocolException, IOException{
+		String url=APIUtils.getAllEmployeesUrl+"pageNo="+pageNo+"&pageSize="+pageSize;
+		return integrationService.getAllPagenationRequest(url);
+	}
+	
+	
 }
